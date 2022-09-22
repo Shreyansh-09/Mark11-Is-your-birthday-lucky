@@ -26,9 +26,15 @@ function calculateSum(dob){
 
 function clickEventHandler() {
     var dateValue = dateofBirth.value;
-    var dob = dateValue.replaceAll("-","")
-    var sumOfDob = calculateSum(dob)
-    var result = isBirthdayLucky(sumOfDob, luckyNumber.value)
+    var luckyNo = luckyNumber.value;
+    if(dateValue === "" && luckyNo === ""){
+        outputDiv.innerText = "Please enter both the fields";
+    }
+    else{
+        var dob = dateValue.replaceAll("-","")
+        var sumOfDob = calculateSum(dob)
+        isBirthdayLucky(sumOfDob, luckyNo)
+    }
 }
 
 
